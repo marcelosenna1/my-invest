@@ -1,0 +1,28 @@
+package br.com.sena.myinvest.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.sena.myinvest.domain.Investimento;
+import br.com.sena.myinvest.repository.InvestimentoRepository;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@RestController
+@RequestMapping("/investimentos")
+public class InvestimentoController {
+	
+	@Autowired//caso eu não usasse a anotação do lombok que cria os contrutores
+	private InvestimentoRepository investimentoRepository;
+	
+	@GetMapping
+	public List<Investimento> listarTodos(){
+		
+		return investimentoRepository.findAll();
+	}
+
+}

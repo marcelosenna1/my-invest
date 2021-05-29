@@ -1,0 +1,24 @@
+package br.com.sena.myinvest.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.sena.myinvest.domain.Investimento;
+import br.com.sena.myinvest.repository.InvestimentoRepository;
+
+@RestController
+@RequestMapping("/investimentos")
+public class InvestimentoController {
+	
+	private InvestimentoRepository investimentoRepository;
+	
+	@GetMapping
+	public List<Investimento> listarTodos(){
+		
+		return investimentoRepository.findAll();
+	}
+
+}

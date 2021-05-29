@@ -1,0 +1,13 @@
+package br.com.sena.myinvest.domain;
+
+import java.time.LocalDateTime;
+
+public class Investimento {
+
+	private Long id;
+	private String codigoAtivo;
+	private Double valorCota;
+	private Integer qtdCotas;
+	private LocalDateTime dataCompra;
+
+}

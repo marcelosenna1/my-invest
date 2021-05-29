@@ -1,0 +1,25 @@
+package br.com.sena.myinvest.domain;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Investimento {
+
+	@Id
+	@GeneratedValu
+	private Long id;
+	private String codigoAtivo;
+	private Double valorCota;
+	private Integer qtdCotas;
+	private LocalDateTime dataCompra;
+
+}

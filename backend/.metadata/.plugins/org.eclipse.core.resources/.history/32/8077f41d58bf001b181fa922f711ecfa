@@ -1,0 +1,9 @@
+package br.com.sena.myinvest.domain;
+
+public class Investimento {
+	
+	private Long id;
+	private String codigoAtivo;
+	
+
+}

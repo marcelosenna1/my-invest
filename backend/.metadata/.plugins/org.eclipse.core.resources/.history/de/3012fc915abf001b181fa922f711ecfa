@@ -1,0 +1,5 @@
+package br.com.sena.myinvest.resources;
+
+public class CategoriaResource {
+
+}
