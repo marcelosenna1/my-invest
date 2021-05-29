@@ -1,6 +1,7 @@
 import "antd/dist/antd.css";
 import { Button, Form, DatePicker, Input, InputNumber, Layout, Menu, message } from 'antd'
 import { Link } from "react-router-dom";
+import investimentoService from "../../service/investimentoService";
   
 
 
@@ -18,6 +19,7 @@ export default function CadastrarInvestimento() {
     };
 
     const onFinish = (values) => {
+        investimentoService.saveInvestimento(values)
         message.success("Investimento Salvo com sucesso")
     }
 
