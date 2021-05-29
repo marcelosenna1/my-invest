@@ -1,8 +1,8 @@
 import "antd/dist/antd.css";
 import { Button, Form, DatePicker, Input, InputNumber, Layout, Menu, message } from 'antd'
 import { Link } from "react-router-dom";
-import investimentoService from "../../service/investimentoService";
-  
+import InvestimentoService from "../../service/InvestimentoService";
+
 
 
 
@@ -19,7 +19,7 @@ export default function CadastrarInvestimento() {
     };
 
     const onFinish = (values) => {
-        investimentoService.saveInvestimento(values)
+        InvestimentoService.saveInvestimento(values)
         message.success("Investimento Salvo com sucesso")
     }
 
@@ -58,7 +58,7 @@ export default function CadastrarInvestimento() {
                                 remember: true,
                             }}
                             onFinish={onFinish}
-                            
+
                         >
 
                             <Form.Item
@@ -75,19 +75,19 @@ export default function CadastrarInvestimento() {
 
                             <Form.Item
                                 label="Valor"
-                                name="Valor"
+                                name="valorCota"
                                 rules={[
                                     {
                                         required: true,
                                         message: 'Insira o valor da cota',
                                     },
                                 ]}>
-                                <Input />
+                                <InputNumber />
                             </Form.Item>
 
                             <Form.Item
                                 label="Quantidade de cotas"
-                                name="quantidadeCotas"
+                                name="qtdCotas"
                                 rules={[
                                     {
                                         required: true,
@@ -109,7 +109,15 @@ export default function CadastrarInvestimento() {
                                 <DatePicker />
                             </Form.Item>
 
-                            <Form.Item{...tailLayout}>
+                            <Form.Item
+                                label="Categoria"
+                                name="categoria"
+                            >
+                                <Input />
+                            </Form.Item>
+
+
+                            <Form.Item {...tailLayout}>
                                 <Button type="primary" htmlType="submit">
                                     Salvar
                             </Button>
